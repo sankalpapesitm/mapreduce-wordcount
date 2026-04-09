@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MapReduce Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="main-container">
+
+    <header>
+        <h1>⚡ MapReduce Word Analyzer</h1>
+<p>Analyze text using MapReduce Simulation</p>
+<button class="dark-toggle btn neutral" id="darkToggle" title="Toggle Dark Mode">🌙</button>
+    </header>
+
+    <!-- INPUT SECTION -->
+    <div class="card input-card">
+        <h2>📥 Input Data</h2>
+
+        <textarea id="textInput" placeholder="Enter multiple sentences..."></textarea>
+
+        <div class="file-upload">
+            <input type="file" id="fileInput" accept=".txt,.csv,.pdf,.docx">
+        </div>
+
+        <div class="buttons">
+            <button onclick="processData()" class="btn primary">Analyze</button>
+            <button onclick="downloadPDF()" class="btn danger">Download PDF</button>
+        </div>
+    </div>
+
+    <!-- OUTPUT SECTION -->
+    <div class="grid">
+
+        <div class="card">
+            <h2>📊 Word Frequency Chart</h2>
+            <canvas id="chart"></canvas>
+        </div>
+
+        <div class="card">
+            <h2>📌 Top Words</h2>
+            <ul id="resultList"></ul>
+        </div>
+
+        <div class="card full-width">
+            <h2>🧩 Map Output (Sample)</h2>
+            <pre id="mapOutput"></pre>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
