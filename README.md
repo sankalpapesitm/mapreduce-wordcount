@@ -28,7 +28,7 @@ This is a Flask-based web application demonstrating a simple MapReduce-style wor
    ```
    python app.py
    ```
-4. Open http://localhost:5000 in your browser.
+4. Open https://mapreduce-wordcount.onrender.com/ in your browser.
 
 ## Features
 - Web form for text input
